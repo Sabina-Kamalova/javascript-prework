@@ -1,6 +1,6 @@
 function playGame(playerInput){
   clearMessages();
-let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 function getMoveName(argMoveId){
   if(argMoveId == 1){
     return 'kamień';
@@ -14,18 +14,13 @@ function getMoveName(argMoveId){
   printMessage('Nie znam ruchu ' + argMoveId + '.');
   return 'nieznany ruch';
 }
-let computerMove = getMoveName(randomNumber);
-printMessage('Mój ruch to: ' + computerMove);
-/*
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-*/
-let playerMove = getMoveName(playerInput);
-printMessage('Twój ruch to: ' + playerMove);
+
 function displayResult(){
+  const computerMove = getMoveName(randomNumber);
+  const playerMove = getMoveName(playerInput);
   printMessage('Zagrałem ' + computerMove + ', a Ty ' + playerMove);
   if(computerMove == 'kamień' && playerMove == 'papier'){
     printMessage('Ty wygrywasz!');
-    console.log('hi');
   }
   else if(computerMove == 'nożyce' && playerMove == 'kamień'){
     printMessage('Ty wygrywasz!');
